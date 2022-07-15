@@ -1,0 +1,57 @@
+import React, { useEffect, useState } from "react";
+import ReactPaginate from "react-paginate";
+import Lasting from "./Lasting";
+import axios from "axios";
+import './App.css'
+
+
+const apiKey = "9b3c3dd82f875d13ca789d1e30540fe4";
+const API_URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=1`;
+export default function Pagenat() {
+  const [currentItems, setCurrentItems] = useState([]);
+  const [pageCount, setPageCount] = useState(0);
+  const [itemOffset, setItemOffset] = useState(0);
+  const itemsPerPage = 4;
+  const [lasting, setLasting] = useState([]);
+
+  
+
+  useEffect(() => {
+    const endOffset = itemOffset + itemsPerPage;
+    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+    setCurrentItems(lasting.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(lasting.length / itemsPerPage));
+    axios.get(API_URL).then((res) => setLasting(res.data.results));
+  }, [itemOffset, itemsPerPage,lasting]);
+
+  const handlePageClick = (event) => {
+    const newOffset = (event.selected * itemsPerPage) % lasting.length;
+   
+    setItemOffset(newOffset);
+  };
+
+  return (
+    <div className="pagantion-contaiiner">
+      <Lasting currentItems={currentItems} />
+      <ReactPaginate
+        breakLabel="..."
+        nextLabel="next >"
+        onPageChange={handlePageClick}
+        pageRangeDisplayed={5}
+        pageCount={pageCount}
+        previousLabel="< previous"
+        pageClassName="page-item"
+        pageLinkClassName="page-link"
+        previousClassName="page-item"
+        previousLinkClassName="page-link"
+        nextClassName="page-item"
+        nextLinkClassName="page-link"
+        breakClassName="page-item"
+        breakLinkClassName="page-link"
+        containerClassName="pagination"
+        activeClassName="active"
+        renderOnZeroPageCount={null}
+      />
+    </div>
+  );
+}
