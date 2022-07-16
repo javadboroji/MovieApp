@@ -148,7 +148,8 @@
     padding: 2rem;
   }
   .single-image{
-      width: fit-content;
+      width: 100%;
+      object-fit: contain;
       padding: 2rem;
   }
   .single-image-box{
@@ -209,4 +210,21 @@
   }
   .nav-link-botstrap-customize:hover{
       color: white;
+  }
+  @media screen and (max-width: 680px){
+    .lasting-des-footer,.singlepost-des{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 7px;
+      }
+      .lasting-des-footer span{
+          padding-top: 10px;
+      }
+      button.MuiButton-root.MuiButton-contained.MuiButton-containedSuccess.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButtonBase-root.css-ke5b6m-MuiButtonBase-root-MuiButton-root{
+          margin-top: 10px;
+      }
+  }
+  @media screen and (max-width: 480px) {
+     
   }

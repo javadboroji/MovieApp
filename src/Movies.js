@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext ,useEffect,useState} from "react";
 import Slider from "react-slick";
 import{Container,Row,Col} from"react-bootstrap"
 import Typography from "@mui/material/Typography";
@@ -10,14 +10,24 @@ import newContext from "./Context";
 import { Link } from 'react-router-dom';
 import SaveMovies from "./SaveMovies";
 import Header from "./Header/Header";
+import { fabClasses } from "@mui/material";
 const API_IMAGE = "https://image.tmdb.org/t/p/w500/";
 export default function Movies({ data,savemovie }) {
-
+  const [width, setWidth]   = useState(window.innerWidth);
+  const updateDimensions = () => {
+    setWidth(window.innerWidth);
+}
 const {setMovieID} = useContext(newContext)
+useEffect(() => {
+  window.addEventListener("resize", updateDimensions);
+  return () => window.removeEventListener("resize", updateDimensions);
+}, []);
+
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 2,
+    arrows:false,
+    slidesToShow: width<720? 1:2,
     slidesToScroll: 1,
     autoplay: true,
     speed: 2000,
