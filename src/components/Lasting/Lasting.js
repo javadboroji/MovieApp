@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link } from 'react-router-dom';
-import "./App.css";
+import "../../App.css";
 
 
 const API_IMAGE = "https://image.tmdb.org/t/p/w500/";

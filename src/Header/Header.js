@@ -23,9 +23,6 @@ function Header() {
             navbarScroll
           >
            <Link to="/saveMovies" className='nav-link-botstrap-customize'>  Favorite</Link> 
-            <Nav.Link href="#" className='nav-link-botstrap-customize' >
-              Link
-            </Nav.Link>
           </Nav>
           <Form className="d-flex" onSubmit={handleSubmit}>
             <Form.Control

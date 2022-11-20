@@ -2,9 +2,9 @@ import React, { useState, useEffect ,useContext} from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import { useParams } from 'react-router-dom';
-import newContext from "./Context";
-import Comments from "./Comments";
-import "./App.css";
+import newContext from "../../Context";
+import Comments from "../Comment/Comments";
+import "../../App.css";
 
 const API_IMAGE = "https://image.tmdb.org/t/p/w500/";
 
@@ -26,7 +26,7 @@ export default function SinglePost() {
               <div className="single-image-box">
               <img className="single-image" src={API_IMAGE+moviePost.poster_path} alt={moviePost.title}/>
               </div>
-                <h1 className="text-color"> {moviePost.title}</h1>
+                <h1 className="text-color text-center"> {moviePost.title}</h1>
                <div className="singlepost-des">
                <h5 className="text-color">Production Year :{""}{moviePost.release_date}{" "} <i className="fa-solid fa-calendar-days  lasting-icon"></i> </h5>
                <h5 className="text-color">popularity :{""}{ moviePost.popularity} </h5>

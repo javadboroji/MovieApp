@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import newContext from "./Context";
+import newContext from "../../Context";
 
 const API_IMAGE = "https://image.tmdb.org/t/p/w500/";
 export default function Search() {

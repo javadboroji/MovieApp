@@ -2,15 +2,12 @@ import React, { useContext ,useEffect,useState} from "react";
 import Slider from "react-slick";
 import{Container,Row,Col} from"react-bootstrap"
 import Typography from "@mui/material/Typography";
-import "./App.css";
-import TopRated from "./TopRated";
+import "../../App.css";
+import TopRated from "../TopRated/TopRated";
 import Banner from "./Banner";
-import Pagenat from "./Pagenat";
-import newContext from "./Context";
+import Pagenat from "../../Pagenat";
+import newContext from "../../Context";
 import { Link } from 'react-router-dom';
-import SaveMovies from "./SaveMovies";
-import Header from "./Header/Header";
-import { fabClasses } from "@mui/material";
 const API_IMAGE = "https://image.tmdb.org/t/p/w500/";
 export default function Movies({ data,savemovie }) {
   const [width, setWidth]   = useState(window.innerWidth);

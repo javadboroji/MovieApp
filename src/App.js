@@ -1,14 +1,13 @@
 import React, { useEffect, useState,useContext } from "react";
 import Header from "./Header/Header";
-import Movies from "./Movies";
+import Movies from "./components/NewMovie/Movies";
 import axios from "axios";
-import { Container, Row } from "react-bootstrap";
 import newContext from "./Context";
 import "./App.css";
-import SinglePost from "./SinglePost";
+import SinglePost from "./components/SinglePost/SinglePost";
 import {  BrowserRouter as Router,Routes, Route,Navigate } from "react-router-dom";
-import SaveMovies from "./SaveMovies";
-import Search from "./Search";
+import SaveMovies from "./components/Favorite/SaveMovies";
+import Search from "./components/Search/Search";
 
 
 
@@ -17,7 +16,7 @@ function App() {
   const {apiKey,saveMovie} = useContext(newContext);
 
   const API_URL_NEWMOVIE =`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`;
-  const API_SEARCH = `https://api.themoviedb.org/3/search/company?api_key=${apiKey}&page=1`;
+
 
 
   const [movie, setMovie] = useState([]);
@@ -27,7 +26,7 @@ function App() {
       .then((res) => {
         setMovie(res.data.results);
       })
-      .then((err) => console.log(err));
+      .catch((err) => console.log(err));
   }, []);
 
  

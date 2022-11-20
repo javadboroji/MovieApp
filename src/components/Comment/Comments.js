@@ -1,6 +1,6 @@
 import React from 'react'
 import Typography from "@mui/material/Typography";
-import "./App.css"
+import "../../App.css"
 export default function Comments() {
   return (
     <div className='commment-box'> 

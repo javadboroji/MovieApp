@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
-import Lasting from "./Lasting";
+import Lasting from "./components/Lasting/Lasting";
 import axios from "axios";
 import './App.css'
 
@@ -15,13 +15,15 @@ export default function Pagenat() {
   const [lasting, setLasting] = useState([]);
 
   
-
+useEffect(()=>{
+  axios.get(API_URL)
+  .then((res) => setLasting(res.data.results))
+  .catch(err=>console.log(err))
+},[])
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     setCurrentItems(lasting.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(lasting.length / itemsPerPage));
-    axios.get(API_URL).then((res) => setLasting(res.data.results));
   }, [itemOffset, itemsPerPage,lasting]);
 
   const handlePageClick = (event) => {
