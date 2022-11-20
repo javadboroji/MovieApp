@@ -6,7 +6,7 @@ import { Container, Row } from "react-bootstrap";
 import newContext from "./Context";
 import "./App.css";
 import SinglePost from "./SinglePost";
-import {  BrowserRouter as Router,Routes, Route } from "react-router-dom";
+import {  BrowserRouter as Router,Routes, Route,Navigate } from "react-router-dom";
 import SaveMovies from "./SaveMovies";
 import Search from "./Search";
 
@@ -38,6 +38,7 @@ function App() {
           <Router>
             <Header />
           <Routes>
+           <Route path="*" element={<Navigate to='/' replace/>}/>
             <Route path="/" element={<Movies data={movie}  savemovie={saveMovie}/>}/>
             <Route  path="/saveMovies" element={<SaveMovies data={saveMovie}/>} />
             <Route path="/singlepost/:movieId" element={<SinglePost id={1212} />}/>
