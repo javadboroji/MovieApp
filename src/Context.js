@@ -7,7 +7,7 @@ export  function MovieContext({children}){
     const [moviePost, setMoviePost] = useState([]);
     const [saveMovie, setSaveMovie] = useState([]);   
      const [searchValue, setSearchValue] = useState("")   
-    const apiKey = "9b3c3dd82f875d13ca789d1e30540fe4";
+    const apiKey = "79d67acf2b0c54cb33201f4d9e957583";
 
     const saveMovieHandler=(e)=>{
         e.preventDefault(); 

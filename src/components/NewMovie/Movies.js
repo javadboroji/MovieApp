@@ -8,6 +8,7 @@ import Banner from "./Banner";
 import Pagenat from "../../Pagenat";
 import newContext from "../../Context";
 import { Link } from 'react-router-dom';
+
 const API_IMAGE = "https://image.tmdb.org/t/p/w500/";
 export default function Movies({ data,savemovie }) {
   const [width, setWidth]   = useState(window.innerWidth);
@@ -24,7 +25,7 @@ useEffect(() => {
     dots: false,
     infinite: true,
     arrows:false,
-    slidesToShow: width<720? 1:2,
+    slidesToShow: width<720? 1:4,
     slidesToScroll: 1,
     autoplay: true,
     speed: 2000,
@@ -35,9 +36,9 @@ useEffect(() => {
   return (
     <>
     <Container fluid>
-      <Row>
+
       <Banner />
-      </Row>
+
       </Container>
       <Container>
         <Row>
@@ -45,18 +46,16 @@ useEffect(() => {
             {" "}
             New movie
           </Typography>
-      <Slider {...settings}>
+      <Slider {...settings} style={{padding:'1rem 0',margin:'0 0.5rem'}}>
 
         {data.map((item) => {
           return (
-       
-            <Col   className="movie-card-col"  key={item.id}>
-             
-              <div className="moive-containner">
+            <div   className="movie-card-col"  key={item.id}>
+
                 <div className="movie-box">
                   <Link to={`/singlepost/${item.id}`}>
                     <img
-                      src={API_IMAGE + item.backdrop_path}
+                      src={API_IMAGE +item.backdrop_path}
                       alt={item.title}
                       className="movie-img"
                     />
@@ -65,9 +64,9 @@ useEffect(() => {
                  <h6 className="w-100 text-center">{item.title}</h6>
                  </div>
                 </div>
-              </div>
-            </Col>
-  
+
+            </div>
+
           );
         })}
         </Slider>

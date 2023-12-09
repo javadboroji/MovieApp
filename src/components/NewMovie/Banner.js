@@ -4,7 +4,7 @@ import "../../App.css"
 export default function Banner() {
     
   return (
-    <div className='banner'>
+    <div >
        <a href='#!'> <img src={Banner1} alt='banner' className='banner-image'/></a> 
     </div>
   )

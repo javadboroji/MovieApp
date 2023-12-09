@@ -13,7 +13,7 @@ function Header() {
 
   return (
     <Navbar bg="dark" expand="lg" variant="dark" sticky="top">
-      <Container fluid>
+      <Container >
       <Link className='nav-link-botstrap-customize' to="/"><Navbar.Brand>  MOVIE TRD</Navbar.Brand>  </Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -22,7 +22,10 @@ function Header() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-           <Link to="/saveMovies" className='nav-link-botstrap-customize'>  Favorite</Link> 
+           <Link to="/saveMovies" className='nav-link-botstrap-customize'>  Favorite</Link>
+              <Link to="/" className='nav-link-botstrap-customize'>  About Us</Link>
+              <Link to="/" className='nav-link-botstrap-customize'> Best 2023 </Link>
+              <Link to="/" className='nav-link-botstrap-customize'>  NewMovie</Link>
           </Nav>
           <Form className="d-flex" onSubmit={handleSubmit}>
             <Form.Control

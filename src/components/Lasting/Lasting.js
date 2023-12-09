@@ -23,13 +23,16 @@ export default function Lasting({currentItems}) {
 
                <Row key={item.id} className="lasting-box">
                 <Col lg={4} sm={12}>
-                  <Link  to={`/singlepost/${item.id}`}>
-                    <img
-                      src={API_IMAGE + item.backdrop_path}
-                      alt={item.title}
-                      className="lasting-image"
-                    />
-                  </Link>
+                    <div className={'lasting-image-box'}>
+                        <Link  to={`/singlepost/${item.id}`}>
+                            <img
+                                src={API_IMAGE + item.backdrop_path}
+                                alt={item.title}
+                                className="lasting-image"
+                            />
+                        </Link>
+                    </div>
+
                 </Col>
                 <Col lg={8} sm={12} className="p-3 d-flex flex-column justify-content-center align-items-center">
                   <h5 className="lasting-movie-name"> {item.title}</h5>
