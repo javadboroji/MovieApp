@@ -5,7 +5,7 @@ import axios from "axios";
 import './App.css'
 
 
-const apiKey = "9b3c3dd82f875d13ca789d1e30540fe4";
+const apiKey = "79d67acf2b0c54cb33201f4d9e957583";
 const API_URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=1`;
 export default function Pagenat() {
   const [currentItems, setCurrentItems] = useState([]);

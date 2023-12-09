@@ -2,8 +2,8 @@
     color: #1f6924 !important;
 
 }
-.App{
-    background-color: rgba(0, 0, 0, 0.794) !important;
+.App ,.navber{
+    background-color: #161A30!important;
 
 }
 
@@ -11,9 +11,9 @@
 /*                      Banner-image                    */
 .banner-image{
     width: 100%;
-    padding: 3rem;
-    object-fit: contain;
+    object-fit: cover;
     filter: brightness(50%);
+    max-height: 85vh;
 }
 .banner-image:hover{
     cursor: pointer;
@@ -56,11 +56,10 @@
 }
 .trend-image{
     opacity: 1;
-    display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
     transition: .5s ease;
-    backface-visibility: hidden;
+
 
 }
 .middle {
@@ -96,9 +95,17 @@
   .lasting-movie-name{
     color: #ffd60a;
     padding: 10px 0px;
+      width: 100%;
+      text-align: left;
   }
   .lasting-image{
       width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      object-fit: cover;
       padding: 10px 0px;
   }
   .lasting-des-footer{
@@ -106,7 +113,7 @@
       justify-content: space-around;
       align-items: center;
       width: 100%;
-      padding: 7px;
+      padding: 2rem 0 ;
   }
   .lasting-des-overviwo,.lasting-des-footer span{
       color: white;
@@ -134,6 +141,7 @@
   }
   .pagination{
       justify-content: center;
+      padding: 2rem 0;
   }
   .page-link:focus {
       background-color: white !important;
@@ -168,13 +176,14 @@
       width: 100%;
   }
   .submit{
-      padding: 7px;
-      border-radius: 15px;
+      padding:0.5rem 2.5rem;
+      border: 0;
+      border-radius: 8px;
       margin: 10px 5px;
-      width: 80px;
       font-size: 18px;
       background-color: rgb(48, 92, 4);
       color: white;
+      text-align: center;
   }
   textarea{
       width: 80%;
@@ -201,8 +210,10 @@
     -webkit-backdrop-filter: blur( 4.5px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    margin-top: 10px ;
-    padding: 2rem;
+      position: relative;
+      width: 95% !important;
+      display: flex !important;
+      margin: 10px auto;
   }
   .nav-link-botstrap-customize{
     color: white;
@@ -213,6 +224,14 @@
   }
   .nav-link-botstrap-customize:hover{
       color: white;
+  }
+  .lasting-image-box{
+      position: relative;
+    overflow: hidden;
+    object-fit: cover;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1/1;
   }
   @media screen and (max-width: 680px){
     .lasting-des-footer,.singlepost-des{

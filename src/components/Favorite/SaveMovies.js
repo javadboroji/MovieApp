@@ -18,25 +18,27 @@ export default function SaveMovies({ data }) {
 
 
   return (
-    <Container fluid>
+    <Container>
       <Row>
         {data &&
           finalSaveMovie.map((item) => {
             return (
-              <Col lg={4} sm={12} key={item.id} className="movie-card-col">
-                <Link to={`/singlepost/${item.id}`}>
-                  <img
-                    className="lasting-image"
-                    src={API_IMAGE + item.poster_path}
-                    alt={item.title}
-                  />
-                </Link>
+              <Col lg={4} sm={12} key={item.id} >
+                  <div className="movie-card-col">
+                    <Link to={`/singlepost/${item.id}`}>
+                      <img
+                          className="lasting-image"
+                          src={API_IMAGE + item.poster_path}
+                          alt={item.title}
+                      />
+                    </Link>
 
-                <h3 className="lasting-movie-name"> {item.title}</h3>
-                <Button variant="contained" color="success">
-                  Download{" "}
-                  <i className="fa fa-download " aria-hidden="true"></i>
-                </Button>
+                    <h3 className="lasting-movie-name"> {item.title}</h3>
+                    <Button variant="contained" color="success">
+                      Download{" "}
+                      <i className="fa fa-download " aria-hidden="true"></i>
+                    </Button>
+                  </div>
               </Col>
             );
           })}
