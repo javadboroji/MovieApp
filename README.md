@@ -1,4 +1,7 @@
-تصاویر پروژه 
+لینک مشاهده آنلاین:https://javadboroji.github.io/MovieApp/
+
+تصاویر پروژه :
+
 ![1](https://github.com/javadboroji/MovieApp/assets/63664484/e23e35a4-cf4b-4ad4-ba5b-32fe30225e4b)
 ![2](https://github.com/javadboroji/MovieApp/assets/63664484/4fb19b5b-cceb-48dc-a6da-aae28340239f)
 ![3](https://github.com/javadboroji/MovieApp/assets/63664484/2a1b3647-60ec-4e4e-9a14-fb6dbc0f5bc2)
