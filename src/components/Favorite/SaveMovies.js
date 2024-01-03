@@ -24,16 +24,18 @@ export default function SaveMovies({ data }) {
           finalSaveMovie.map((item) => {
             return (
               <Col lg={4} sm={12} key={item.id} >
-                  <div className="movie-card-col">
-                    <Link to={`/singlepost/${item.id}`}>
+                  <div className="movie-card-col" style={{display:'flex',flexDirection:'column'}}>
+                    <Link to={`/singlepost/${item.id}`} style={{width:'100%',height:'100%'}}>
+                      <div style={{position:'relative' ,paddingTop:'100%', width:'100%'}}>
                       <img
                           className="lasting-image"
                           src={API_IMAGE + item.poster_path}
                           alt={item.title}
                       />
+                      </div>
                     </Link>
 
-                    <h3 className="lasting-movie-name"> {item.title}</h3>
+                    <h3 className="lasting-movie-name" style={{textAlign:'center'}}> {item.title}</h3>
                     <Button variant="contained" color="success">
                       Download{" "}
                       <i className="fa fa-download " aria-hidden="true"></i>
